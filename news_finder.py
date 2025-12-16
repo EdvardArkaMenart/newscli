@@ -11,15 +11,15 @@ data_string = data_bytes.decode("utf-8")
 soup = BeautifulSoup(data_string, 'html.parser')
 head_tag = soup.head
 results = soup.find(id="hovedlopet")
-
 job_cards = results.find_all("div", "article-container")
-#print(job_cards)
+
 for job_card in job_cards:
     title_element = job_card.find("h2", class_="headline")
     company_element = job_card.find_all("a", href=True)
-    location_element = job_card.find("p", class_="location")
-    #print(type(company_element))
+    location_element = job_card.find("span", role="presentation")
     print("*************************")
+    if location_element:
+        print(location_element.text)
     print(title_element.text.strip())
     for i in company_element:
         
