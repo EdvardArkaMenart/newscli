@@ -23,14 +23,4 @@ for job_card in job_cards:
     print(title_element.text.strip())
     for i in company_element:
         
-        print(i["href"])
-    
-    #print(type(company_element))
-    #print(location_element)
-    #print()
-#print(soup.find_all('a'))
-#print(len(list(soup.descendants)))
-#print(head_tag.contents)
-#print(soup.text)
-#for link in soup.find_all('a'):
-    #print(link.get('href'))
+        print(i["href"])  
